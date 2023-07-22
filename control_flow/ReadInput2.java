@@ -1,13 +1,25 @@
 import java.util.Scanner;
 
-public class ReadInput1 {
+public class ReadInput2 {
     public static void main(String[] args) {
-        int currentYear = 2023;
-        try {
-            System.out.println(getInputFromConsole(currentYear));
-        } catch (NullPointerException e) {
-            System.out.println(getInputFromScanner(currentYear));
+        Scanner scanner = new Scanner(System.in);
+
+        int counter = 1;
+        int sum = 0;
+
+        while (counter < 5) {
+            System.out.println("Enter number #" + counter + ":");
+            String nextNumber = scanner.nextLine();
+            try {
+                // int number = Integer.parseInt(nextNumber);
+                double number = Double.parseDouble(nextNumber);
+                counter ++;    
+                sum += number;
+            } catch (NumberFormatException e) {
+                System.out.println("bad data");
+            }
         }
+        System.out.println(sum);
         
     }
 
